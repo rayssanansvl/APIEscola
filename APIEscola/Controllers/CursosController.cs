@@ -17,14 +17,12 @@ namespace APIEscola.Controllers
     [Authorize]
     public class CursosController : ControllerBase
     {
-        // Injeção de Depedência do DbContext
+        // Injeção de Dependência do DbContext
         private readonly APIEscolaContext _context;
         private readonly UserManager<IdentityUser> _userManager;
-        private UserManager<IdentityUser> userManager;
 
         // Construtor que recebe o DbContext
-        public CursosController(APIEscolaContext context,
-            UserManager<IdentityUser> userManager)
+        public CursosController(APIEscolaContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
             _userManager = userManager;
@@ -46,7 +44,7 @@ namespace APIEscola.Controllers
 
             if (curso == null)
             {
-                return NotFound("Id não encontrado");
+                return NotFound("Id não Encontrado");
             }
 
             return curso;
